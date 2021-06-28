@@ -1,0 +1,21 @@
+<h3>Create New Employee</h3>
+
+<form (ngSubmit)='handleSubmit()' #employeeForm='ngForm'>
+    <!-- <h3>{{employeeForm.value | json}}</h3>
+    <hr/>
+    <h3>{{employeeModel | json}}</h3> -->
+    <div class="form-group">
+        <label>Employee Name</label>
+        <input class="form-control" name="ename" [(ngModel)]='employeeModel.ename'/>
+    </div>
+    <div>
+        <label>Employee City</label>
+        <select class="form-control" name="ecity" [(ngModel)]='employeeModel.ecity'>
+            <option value="">--Select City--</option>
+            <option *ngFor='let city of cities' value={{city}}>{{city}}</option>
+        </select>
+    </div>
+    <button class="btn btn-primary mt-2">Add Employee</button>
+    <br/>
+    <h5 class="mt-2 text-info">{{msg}}</h5>
+</form>

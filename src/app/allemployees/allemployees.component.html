@@ -1,0 +1,26 @@
+<h3>All Employees</h3>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>EID</th>
+            <th>ENAME</th>
+            <th>ECITY</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor='let employee of employees'>
+        <tr>
+            <td>{{employee.eid}}</td>
+            <td>{{employee.ename}}</td>
+            <td>{{employee.ecity}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="editEmployee(employee.eid)">Edit</button> |
+                <button class="btn btn-danger" (click)="deleteEmployee(employee.eid)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<hr/>
+<h5 class="text-danger mt-1">{{msg}}</h5>
